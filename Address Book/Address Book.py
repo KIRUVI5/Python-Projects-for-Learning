@@ -1,11 +1,14 @@
+#Import Libraries
 from tkinter import *
 
+#Initializing window
 root = Tk()
 root.geometry('400x400')
 root.config(bg = 'SlateGray3')
 root.resizable(0,0)
 root.title('DataFlair-AddressBook')
 
+#Declare variable
 contactlist = [
     ['Parv Maheswari',  '0176738493'],
     ['David Sharma',  '2684430000'],
@@ -27,6 +30,7 @@ scroll.config (command=select.yview)
 scroll.pack(side=RIGHT, fill=Y)
 select.pack(side=LEFT,  fill=BOTH, expand=1)
 
+#Functions
 def Selected():
     return int(select.curselection()[0])
 
@@ -62,6 +66,7 @@ def Select_set() :
         select.insert (END, name)
 Select_set()
 
+#Label and buttons
 Label(root, text = 'NAME', font='arial 12 bold', bg = 'SlateGray3').place(x= 30, y=20)
 Entry(root, textvariable = Name).place(x= 100, y=20)
 
@@ -77,4 +82,5 @@ Button(root,text="VIEW", font='arial 12 bold',bg='SlateGray4', command = VIEW).p
 Button(root,text="EXIT", font='arial 12 bold',bg='tomato', command = EXIT).place(x= 300, y=320)
 Button(root,text="RESET", font='arial 12 bold',bg='SlateGray4', command = RESET).place(x= 50, y=310)
 
+#main function
 root.mainloop()
